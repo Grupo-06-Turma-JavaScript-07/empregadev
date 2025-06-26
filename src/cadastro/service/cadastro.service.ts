@@ -28,10 +28,10 @@ export class CadastroService {
         return cadastro;
     }
 
-    async findByCargo(titulo: string): Promise<Cadastro[]> {
+    async findAllByCargo(cargo: string): Promise<Cadastro[]> {
         return await this.cadastroRepository.find({
-            where:{
-                titulo: ILike(`%${cargo}%`)
+            where: {
+                cargo: ILike(`%${cargo}%`)
             }
         })
     }
@@ -41,17 +41,17 @@ export class CadastroService {
     }
 
     async update(cadastro: Cadastro): Promise<Cadastro> {
-        
+
         let buscaCadastro = await this.findById(cadastro.id);
 
         if (!buscaCadastro || !cadastro.id)
             throw new HttpException('Funcionário não encontrado!', HttpStatus.NOT_FOUND);
-        
+
         return await this.cadastroRepository.save(cadastro);
     }
 
     async delete(id: number): Promise<DeleteResult> {
-        
+
         let buscaCadastro = await this.findById(id);
 
         if (!buscaCadastro)

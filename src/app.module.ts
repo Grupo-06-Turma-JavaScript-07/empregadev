@@ -1,7 +1,7 @@
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
 import { CadastroModule } from './cadastro/cadastro.module';
-import { Cadastro } from '.cadastro/entities/cadastro.entity';
+import { Cadastro } from './cadastro/entities/cadastro.entity';
 
 @Module({
   imports: [
@@ -20,4 +20,4 @@ import { Cadastro } from '.cadastro/entities/cadastro.entity';
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule { }
