@@ -23,7 +23,7 @@ findAll(): Promise < Cadastro[] > {
   return this.cadastroService.findAll();
 }
 
-@Get('/id')
+@Get('/:id')
 @HttpCode(HttpStatus.OK)
 findById(@Param('id', ParseIntPipe) id: number): Promise < Cadastro > {
   return this.cadastroService.findById(id);
@@ -31,8 +31,8 @@ findById(@Param('id', ParseIntPipe) id: number): Promise < Cadastro > {
 
 @Get('/setor/:setor')
 @HttpCode(HttpStatus.OK)
-findAllByCargo(@Param('setor') setor: string): Promise < Cadastro[] > {
-  return this.cadastroService.findAllByCargo(setor);
+findAllBySetor(@Param('setor') setor: string): Promise < Cadastro[] > {
+  return this.cadastroService.findAllBySetor(setor);
 }
 
 @Post()

@@ -28,10 +28,10 @@ export class CadastroService {
         return cadastro;
     }
 
-    async findAllByCargo(cargo: string): Promise<Cadastro[]> {
+    async findAllBySetor(setor: string): Promise<Cadastro[]> {
         return await this.cadastroRepository.find({
             where: {
-                cargo: ILike(`%${cargo}%`)
+                cargo: ILike(`%${setor}%`)
             }
         })
     }
