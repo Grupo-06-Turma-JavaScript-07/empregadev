@@ -23,7 +23,7 @@ export class CadastroService {
         });
 
         if (!cadastro)
-            throw new HttpException('Cadastro não encontrado!', HttpStatus.NOT_FOUND);
+            throw new HttpException('Funcionário não encontrado!', HttpStatus.NOT_FOUND);
 
         return cadastro;
     }
@@ -45,7 +45,7 @@ export class CadastroService {
         let buscaCadastro = await this.findById(cadastro.id);
 
         if (!buscaCadastro || !cadastro.id)
-            throw new HttpException('Cadastro não encontrado!', HttpStatus.NOT_FOUND);
+            throw new HttpException('Funcionário não encontrado!', HttpStatus.NOT_FOUND);
         
         return await this.cadastroRepository.save(cadastro);
     }
@@ -55,7 +55,7 @@ export class CadastroService {
         let buscaCadastro = await this.findById(id);
 
         if (!buscaCadastro)
-            throw new HttpException('Cadastro não encontrado!', HttpStatus.NOT_FOUND);
+            throw new HttpException('Funcionário não encontrado!', HttpStatus.NOT_FOUND);
 
         return await this.cadastroRepository.delete(id);
 
