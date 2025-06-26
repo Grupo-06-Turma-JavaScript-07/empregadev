@@ -37,13 +37,13 @@ export class CadastroController {
 
   @Post()
   @HttpCode(HttpStatus.CREATED)
-  create(@Body() cadastro: Cadastro): Promise<Postagem> {
+  create(@Body() cadastro: Cadastro): Promise<Cadastro> {
     return this.cadastroService.create(cadastro);
   }
 
   @Put()
   @HttpCode(HttpStatus.OK)
-  update(@Body() cadastro: Cadastro): Promise<Postagem> {
+  update(@Body() cadastro: Cadastro): Promise<Cadastro> {
     return this.cadastroService.update(cadastro);
   }
 
